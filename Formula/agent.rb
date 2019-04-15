@@ -2,9 +2,9 @@
 class Agent < Formula
   desc "Semaphore 2.0 agent."
   homepage "https://semaphoreci.com"
-  url "https://github.com/semaphoreci/agent/releases/download/v0.4.5/agent_Darwin_x86_64.tar.gz"
-  version "0.4.5"
-  sha256 "20064e180c6ba168ecdd07a2bd6310e0853239c4c31be7f0a7b8915e229cbe4b"
+  url "https://github.com/semaphoreci/agent/releases/download/v0.5.0/agent_Darwin_x86_64.tar.gz"
+  version "0.5.0"
+  sha256 "067e9a380b81d4568924531da14de7959af3c8b5e28efd13fdc0bd70936e77e0"
 
   def install
     bin.install "agent"
