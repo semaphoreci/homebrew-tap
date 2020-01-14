@@ -2,9 +2,9 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  url "https://github.com/semaphoreci/cli/releases/download/v0.19.0/sem_Darwin_x86_64.tar.gz"
-  version "0.19.0"
-  sha256 "d76452dbe8743659036613795b24990d8f6c2b873cabc60cb9337e80171537cc"
+  url "https://github.com/semaphoreci/cli/releases/download/v0.20.0/sem_Darwin_x86_64.tar.gz"
+  version "0.20.0"
+  sha256 "45ab17cf9dbd5d30af2f67d6a2a47a9b44494a5606e3de1a99312a92bb4b2f99"
 
   def install
     bin.install "sem"
