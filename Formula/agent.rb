@@ -2,16 +2,16 @@
 class Agent < Formula
   desc "Semaphore 2.0 agent."
   homepage "https://semaphoreci.com"
-  version "1.0.5"
+  version "1.0.6"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/semaphoreci/agent/releases/download/v1.0.5/agent_Darwin_x86_64.tar.gz"
-    sha256 "1dc18ee4cb75eba8001178268201eb3a4c9ea70f76a5c9c63471d12ac160bea1"
+    url "https://github.com/semaphoreci/agent/releases/download/v1.0.6/agent_Darwin_x86_64.tar.gz"
+    sha256 "18094c77a92e6984cf7ac02d4773a8a213511f0bcd23e6b18c5851bc98a4f5cb"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v1.0.5/agent_Linux_x86_64.tar.gz"
-      sha256 "e99cd434ffefd35b916d8b15d1f7b2dbf801e500a64c5aa4dc5a611eb718c6d0"
+      url "https://github.com/semaphoreci/agent/releases/download/v1.0.6/agent_Linux_x86_64.tar.gz"
+      sha256 "0f1c0ede67f5903f173623e59241073bd736d824a19a8f95c62467873a7141fb"
     end
   end
 
