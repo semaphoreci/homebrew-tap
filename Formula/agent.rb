@@ -5,28 +5,28 @@
 class Agent < Formula
   desc "Semaphore 2.0 agent."
   homepage "https://semaphoreci.com"
-  version "2.0.11"
+  version "2.0.12"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.0.11/agent_Darwin_x86_64.tar.gz"
-      sha256 "56a855ec5f8687df4265cba95a93a41a8b1bbfea39f8da6ab483b3cd089547b5"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.12/agent_Darwin_x86_64.tar.gz"
+      sha256 "bb11b4e54fe6c29488cc939ba173e3c1a9d70151340b2ee1c6b6c6ae0244100f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.0.11/agent_Linux_x86_64.tar.gz"
-      sha256 "75aed974f1f73441027e29f16a4e0b99167570dae7b48a3a41ae4c3d28afae06"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.12/agent_Linux_x86_64.tar.gz"
+      sha256 "5064b019ba219ee26c2921766d8a32fb8fbc1a62b9ccbc9e76c8cec177012c93"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.0.11/agent_Linux_armv6.tar.gz"
-      sha256 "ce48a8d071faa7739e8863da4c82ee68a85465e797d75609b707bf0663813209"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.12/agent_Linux_armv6.tar.gz"
+      sha256 "06f927defec06f1425a77b1e57392bebc092c4682330e5279a9fb98b7f0f92fc"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.0.11/agent_Linux_arm64.tar.gz"
-      sha256 "df717eabde28297719b3a747374d183696e66af82923a3acbfae0940fbcc3478"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.12/agent_Linux_arm64.tar.gz"
+      sha256 "de5d4d3efb75bb56927a6757921fb5b6763d6ef7f8079150b0e6170ce4252bb7"
     end
   end
 
