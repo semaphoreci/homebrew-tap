@@ -5,25 +5,52 @@
 class Agent < Formula
   desc "Semaphore 2.0 agent."
   homepage "https://semaphoreci.com"
-  version "1.4.3"
-  bottle :unneeded
+  version "2.0.14"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.14/agent_Darwin_arm64.tar.gz"
+      sha256 "7f938388d436635799dc5dd3d288aab012b146869c08944cc59f890712633531"
+
+      def install
+        bin.install "agent"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v1.4.3/agent_Darwin_x86_64.tar.gz"
-      sha256 "df5b26967ef8dfea2dfa8df95f4110c5f3f2c813e66eb63a83347bfb7517967b"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.14/agent_Darwin_x86_64.tar.gz"
+      sha256 "180b9bee26edc7fa84fc41028228f0cb724d604e26720cbb318fae0292f5c54a"
+
+      def install
+        bin.install "agent"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v1.4.3/agent_Linux_x86_64.tar.gz"
-      sha256 "dc93a34eaadbdf6a786e7e22f06ed2bae2f3cfba769f98b40827f810c1c62eb4"
-    end
-  end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.14/agent_Linux_armv6.tar.gz"
+      sha256 "8e40b3d3832983da57d99f704e5436ae3e93fba40537a958c085ac3bf5ccde99"
 
-  def install
-    bin.install "agent"
+      def install
+        bin.install "agent"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.14/agent_Linux_arm64.tar.gz"
+      sha256 "8af5f1411bde03cd99a6bc90b38bd3ffb63cc55c7bd895d3be69b10605fa7a68"
+
+      def install
+        bin.install "agent"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/agent/releases/download/v2.0.14/agent_Linux_x86_64.tar.gz"
+      sha256 "3dc9eb0a07a3d327bdebf1c70976d3821e8fd152337e719b506ef25d4e631121"
+
+      def install
+        bin.install "agent"
+      end
+    end
   end
 
   test do
