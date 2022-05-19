@@ -5,44 +5,28 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.24.0"
+  version "0.25.0"
+  bottle :unneeded
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.24.0/sem_Darwin_arm64.tar.gz"
-      sha256 "8cc88fa2196fceb8477af9b4d1967ec15c8c745c7944616606ff3bc7124af05f"
-
-      def install
-        bin.install "sem"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.24.0/sem_Darwin_x86_64.tar.gz"
-      sha256 "7368774b611c5b0102125b2b73c959844a4bbd67d658979c808a38feff0eaaf2"
-
-      def install
-        bin.install "sem"
-      end
-    end
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/semaphoreci/cli/releases/download/v0.25.0/sem_Darwin_x86_64.tar.gz"
+    sha256 "a8ead8da2676849e111189008fe5d406008c9e79e762fc15e5fb1d6c615d4435"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/semaphoreci/cli/releases/download/v0.25.0/sem_Darwin_arm64.tar.gz"
+    sha256 "9e7390db4166a335db7f568ca1509a954d311285fec60fd6d5050611c995f238"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/semaphoreci/cli/releases/download/v0.25.0/sem_Linux_x86_64.tar.gz"
+    sha256 "8a9d572d74d576f512bc2459ecdff2f710ed46a6a8b1831f71b2586cb7d89394"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/semaphoreci/cli/releases/download/v0.25.0/sem_Linux_arm64.tar.gz"
+    sha256 "84bedea979e7b2f3a7e721c33ae16d297ee5759f802d3e645b474a839344a3a0"
   end
 
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.24.0/sem_Linux_arm64.tar.gz"
-      sha256 "2720c8c99aec2b41a3e32ad863d2a0d533ad8ce1d9377bab757c649f76926467"
-
-      def install
-        bin.install "sem"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.24.0/sem_Linux_x86_64.tar.gz"
-      sha256 "bff56d891ba4e66ac1a7f9a75393a56bb703798521b7015928bf60108ed3fbc9"
-
-      def install
-        bin.install "sem"
-      end
-    end
+  def install
+    bin.install "sem"
   end
 
   test do
