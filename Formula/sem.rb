@@ -6,7 +6,6 @@ class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
   version "0.25.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/semaphoreci/cli/releases/download/v0.25.0/sem_Darwin_x86_64.tar.gz"
