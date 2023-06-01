@@ -5,20 +5,20 @@
 class Agent < Formula
   desc "Semaphore 2.0 agent."
   homepage "https://semaphoreci.com"
-  version "2.2.5"
+  version "2.2.6"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.2.5/agent_Darwin_arm64.tar.gz"
-      sha256 "9c702f8693df22b361caa3f7975754b92bc9abc5203023ccc25141a22c303597"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.2.6/agent_Darwin_arm64.tar.gz"
+      sha256 "3c6b93886044f93e528edf46875d9cf36a0205b5c5d06812871ab8c5882eace9"
 
       def install
         bin.install "agent"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.2.5/agent_Darwin_x86_64.tar.gz"
-      sha256 "85cf7be6783824b48ba281e5580b445c6d67a64d5f263024903337057d9afda1"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.2.6/agent_Darwin_x86_64.tar.gz"
+      sha256 "51a023319a6b410969e723e2340e8480efaa3768d6707f87984e3799289b85ec"
 
       def install
         bin.install "agent"
@@ -27,25 +27,25 @@ class Agent < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/agent/releases/download/v2.2.6/agent_Linux_arm64.tar.gz"
+      sha256 "d15701c477528a86adb5721272ed5237086b833114a1c6f847fb110e5645f500"
+
+      def install
+        bin.install "agent"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.2.5/agent_Linux_armv6.tar.gz"
-      sha256 "fff35e700e78b923de41acc14c0358fb7af2948150d9226f51dae544ca0d62f3"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.2.6/agent_Linux_armv6.tar.gz"
+      sha256 "a6971667cf12a322be641604cd2a4051d61ec9d51af6662ee0f6d5c12dc2209d"
 
       def install
         bin.install "agent"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.2.5/agent_Linux_x86_64.tar.gz"
-      sha256 "e5afdb5e02cb8d0d9ce81c832a1b9331763a9981cfd1d59c6d1031342529a55a"
-
-      def install
-        bin.install "agent"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/agent/releases/download/v2.2.5/agent_Linux_arm64.tar.gz"
-      sha256 "cde126354e3fff6c0c1e2f955592ce5fe5bcfa592a70bb90180d254873375fb3"
+      url "https://github.com/semaphoreci/agent/releases/download/v2.2.6/agent_Linux_x86_64.tar.gz"
+      sha256 "4235b45be5c44a60de8ddb7b649aeeeef0253130c57072459ed263e916a9ef04"
 
       def install
         bin.install "agent"
