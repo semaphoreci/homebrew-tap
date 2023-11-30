@@ -5,20 +5,20 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.28.4"
+  version "0.28.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.4/sem_Darwin_arm64.tar.gz"
-      sha256 "bb50518c1690daedf2dfb3be34c866f5999774c0c333d6edc4823ab4aa35ce6b"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Darwin_arm64.tar.gz"
+      sha256 "7280e1461b89054466c3af759d92ff9a0a95187930e6c899e222d2628de00222"
 
       def install
         bin.install "sem"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.4/sem_Darwin_x86_64.tar.gz"
-      sha256 "7b42202769a1c476edaa812569e5c5353515b7b58509e6647a0d0fb7ee88c634"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Darwin_x86_64.tar.gz"
+      sha256 "a2068dfb7eddc34267cbd6acadde51a1e517ce09d02ba000d4f2079c426e1b08"
 
       def install
         bin.install "sem"
@@ -27,17 +27,17 @@ class Sem < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.4/sem_Linux_x86_64.tar.gz"
-      sha256 "dd2012f4e2f9db67c1d91d9e7459757eaac58880007a070d327c2e8ebbe7fb2a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Linux_arm64.tar.gz"
+      sha256 "75c836c7d13b02f0b21ee6b16b548791799dc695f2f40155cd998fe21cb8bdda"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.4/sem_Linux_arm64.tar.gz"
-      sha256 "0785bdc0cf193a93f15c6732639c03edd695d296cc166a2e4f77bdad018b2c0f"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Linux_x86_64.tar.gz"
+      sha256 "e62f90abe576e5a9fe987350483be2aa11a1d0c5bb23aec3c9e3500c530a12d5"
 
       def install
         bin.install "sem"
