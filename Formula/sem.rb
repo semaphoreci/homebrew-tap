@@ -5,20 +5,20 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.28.5"
+  version "0.28.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Darwin_arm64.tar.gz"
-      sha256 "7280e1461b89054466c3af759d92ff9a0a95187930e6c899e222d2628de00222"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.6/sem_Darwin_x86_64.tar.gz"
+      sha256 "a792d1a83a0e35a9918208b6a2ca03a3170ecba763b73c752a4eba85e8b83f3b"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Darwin_x86_64.tar.gz"
-      sha256 "a2068dfb7eddc34267cbd6acadde51a1e517ce09d02ba000d4f2079c426e1b08"
+    if Hardware::CPU.arm?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.6/sem_Darwin_arm64.tar.gz"
+      sha256 "b917411cb82bf04e7c38e2ecc0863061c6134be214d3fd95ee710292bd071fb7"
 
       def install
         bin.install "sem"
@@ -27,17 +27,17 @@ class Sem < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Linux_arm64.tar.gz"
-      sha256 "75c836c7d13b02f0b21ee6b16b548791799dc695f2f40155cd998fe21cb8bdda"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.6/sem_Linux_x86_64.tar.gz"
+      sha256 "705ac18f583eafebbc28958a3172e1eac707079b51899612402c180f4c757704"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.28.5/sem_Linux_x86_64.tar.gz"
-      sha256 "e62f90abe576e5a9fe987350483be2aa11a1d0c5bb23aec3c9e3500c530a12d5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.28.6/sem_Linux_arm64.tar.gz"
+      sha256 "b17728778a6877d14123843598e1dc96248b0577e2a12fbefed023a497d8fe1b"
 
       def install
         bin.install "sem"
