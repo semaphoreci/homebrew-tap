@@ -5,20 +5,20 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.30.1"
+  version "0.31.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.30.1/sem_Darwin_arm64.tar.gz"
-      sha256 "db843fc150faf86d3c4e5803e54a2fb3acc58e6059552909ae515b562b988036"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.31.0/sem_Darwin_x86_64.tar.gz"
+      sha256 "7be86b323347ec48b6009bb109977970214d0bab608a133d9a760578a81e0259"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.30.1/sem_Darwin_x86_64.tar.gz"
-      sha256 "5948c8d6058a0aef00832cf276d591f0dd84f476835a7119b4bd2c39ec79b05a"
+    if Hardware::CPU.arm?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.31.0/sem_Darwin_arm64.tar.gz"
+      sha256 "05fa57f45bc77c57b7c56fdd30ecf3aeab7236b26d84873278717bba83e6d60f"
 
       def install
         bin.install "sem"
@@ -27,17 +27,17 @@ class Sem < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.30.1/sem_Linux_x86_64.tar.gz"
-      sha256 "ffb535803049169df72664b11ca69554ca4db6cbc3d933c4936ec633e44a9cd9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.31.0/sem_Linux_arm64.tar.gz"
+      sha256 "2969d7300fa27180d195d01e4e6dfed297c843f3e2305d16d0b29d586a9afc96"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.30.1/sem_Linux_arm64.tar.gz"
-      sha256 "903722654ce7052e11d6ba636c18e321b35c3d204af3502aac2e77eb75e0398f"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.31.0/sem_Linux_x86_64.tar.gz"
+      sha256 "8b0427014a78d62b1706b41c13d0ab80d35c9e303fdc6199fd26d4f4de2768de"
 
       def install
         bin.install "sem"
