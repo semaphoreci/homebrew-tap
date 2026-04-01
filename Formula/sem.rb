@@ -5,20 +5,20 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.33.0"
+  version "0.33.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.33.0/sem_Darwin_x86_64.tar.gz"
-      sha256 "5081668bbc6f57373ba30c87980ec20dbea4e46f1373a0d38d1d84d1de979937"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.33.1/sem_Darwin_x86_64.tar.gz"
+      sha256 "5ca22bb7dfc73e0ea2fd57549a27c3230b2e96dcc3a99f655cac4fc7e6f77ea2"
 
       def install
         bin.install "sem"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.33.0/sem_Darwin_arm64.tar.gz"
-      sha256 "2d6c8fa46f890ee9cb57727eb6f2e9013c9456fff88aa4f0c7bd4826bbd8b108"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.33.1/sem_Darwin_arm64.tar.gz"
+      sha256 "206e0729c34989e7afe0b89cc69bc0615ac63ae43201dc6f9149c58305a8d790"
 
       def install
         bin.install "sem"
@@ -28,16 +28,16 @@ class Sem < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.33.0/sem_Linux_x86_64.tar.gz"
-      sha256 "a4f49df73e7e94a091e75010914573caf7355f0f019fc02c9385e40da85bdddb"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.33.1/sem_Linux_x86_64.tar.gz"
+      sha256 "aef91c51521ce44b1f812201b463ec1b1391aa23c455f28faedf04e237c37176"
 
       def install
         bin.install "sem"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.33.0/sem_Linux_arm64.tar.gz"
-      sha256 "42c9835418fb3e8ce316feef384f02b2d36084bcb74202f098a5c49d078c8ac7"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.33.1/sem_Linux_arm64.tar.gz"
+      sha256 "3c6082b32326f42c9c3ed4afe80a7728e765758fd0ff93e95a2186edb6a53a4d"
 
       def install
         bin.install "sem"
