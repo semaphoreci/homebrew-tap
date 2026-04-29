@@ -5,20 +5,20 @@
 class Sem < Formula
   desc "Semaphore 2.0 command line interface."
   homepage "https://semaphoreci.com"
-  version "0.34.0"
+  version "0.35.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.34.0/sem_Darwin_x86_64.tar.gz"
-      sha256 "ee6d2f7d4546f6caad30e0f6e973cf8fb4256c4f1a2e0429dc5f3161e0a6c9fb"
+    if Hardware::CPU.arm?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.35.0/sem_Darwin_arm64.tar.gz"
+      sha256 "91fa55733dd2efa005db1f3c5a1704ddb43ebe2cc262441cfa110df8726f5fa8"
 
       def install
         bin.install "sem"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.34.0/sem_Darwin_arm64.tar.gz"
-      sha256 "d2c34aa0f1a107e4bb15eacac45efa198eac45cc39107706e2b6e23143757b47"
+    if Hardware::CPU.intel?
+      url "https://github.com/semaphoreci/cli/releases/download/v0.35.0/sem_Darwin_x86_64.tar.gz"
+      sha256 "b75285fb19c736bafe120d4ca920c201264bf9c6f14c3e2aff1884b19ed9cab9"
 
       def install
         bin.install "sem"
@@ -28,16 +28,16 @@ class Sem < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.34.0/sem_Linux_x86_64.tar.gz"
-      sha256 "c0a18c2022fa788f3b655a64937bfeb6985f094e709946697ab487473c5d39dc"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.35.0/sem_Linux_x86_64.tar.gz"
+      sha256 "7872d01e57b81216b22457595b5ac99ba843b6ccfadb52a38ef5e983326e0686"
 
       def install
         bin.install "sem"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/semaphoreci/cli/releases/download/v0.34.0/sem_Linux_arm64.tar.gz"
-      sha256 "9c66529e6fc1ba85a291fb077e3db300ebd28853b0ad737e4ce81bc9683a56c7"
+      url "https://github.com/semaphoreci/cli/releases/download/v0.35.0/sem_Linux_arm64.tar.gz"
+      sha256 "0f80dd493613db240c457a69d412d51da3e0cef1880e7484f04bdafe8c941e45"
 
       def install
         bin.install "sem"
